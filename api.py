@@ -8,7 +8,7 @@ load_dotenv()
 app = Flask(__name__)
 PORT = int(os.getenv("PORT", 5000))
 EPL_API_URL = "https://api.football-data.org/v4/competitions/PL/standings"
-API_KEY = os.getenv("API_KEY")  # Store your API key in a .env file
+API_KEY = football_API.envv("API_KEY")  # Store your API key in a .env file
 
 @app.route("/standings", methods=["GET"])
 def get_standings():
